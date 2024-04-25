@@ -32,8 +32,8 @@ def main(session, details):
 	# wait 20 seconds for we close the stream
 	yield sleep(20)
 	yield session.call("rie.dialogue.say", text="Time's up. I'm leaving")
-	yield session.call("rie.dialogue.keyword.close")
 	yield session.call("rie.dialogue.keyword.clear")
+	yield session.call("rie.dialogue.keyword.close")
 
 	session.leave() # Close the connection with the robot
 
