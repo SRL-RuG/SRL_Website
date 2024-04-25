@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.prose h2 {
+  color: #374151;
+  font-size: 1.25rem; /* Tailwind text-lg */
+  font-weight: 700; /* Tailwind font-bold */
+  line-height: 1.6; /* Tailwind leading-tight */
+  margin-top: 1.6rem; /* Tailwind mt-6 */
+  margin-bottom: 0.8rem; /* Tailwind mb-4 */
+}
+
+.prose h3 {
+  color: #374151;
+  font-size: 1.125rem; /* Tailwind text-base */
+  font-weight: 700; /* Tailwind font-bold */
+  line-height: 1.6; /* Tailwind leading-tight */
+  margin-top: 1.6rem; /* Tailwind mt-6 */
+  margin-bottom: 0.8rem; /* Tailwind mb-4 */
+}
+
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(
+    -45deg,
+    oklch(var(--p)),
+    oklch(var(--a))
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 35vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.card-content {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.card-content ul {
+  padding-left: 20px;
+}
+
+.card-content li {
+  margin-bottom: 10px;
+}
+
+.card-content li ul {
+  margin-top: 5px;
+}
