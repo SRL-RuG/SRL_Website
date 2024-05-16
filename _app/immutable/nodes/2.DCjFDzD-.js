@@ -1,4 +1,4 @@
-import{s as yt,a as _t,n as We}from"../chunks/scheduler.BfJEPAwo.js";import{S as xt,i as It,e as t,t as b,s as u,c as a,a as l,b as g,d as i,f as p,g as F,h as o,j as B,k as e,l as Et,m as Ct,n as Rt}from"../chunks/index.KRk6gBHG.js";import{e as ft}from"../chunks/each.D6YF6ztN.js";import"../chunks/paths.Du9LrVJA.js";function bt(r,n,v){const c=r.slice();return c[4]=n[v],c}function gt(r){let n,v=`<p>Furthermore, the robot’s environment is changing continuously either
+import{s as yt,a as _t,n as We}from"../chunks/scheduler.BfJEPAwo.js";import{S as xt,i as It,e as t,t as b,s as u,c as a,a as l,b as g,d as i,f as p,g as F,h as o,j as B,k as e,l as Et,m as Ct,n as Rt}from"../chunks/index.KRk6gBHG.js";import{e as ft}from"../chunks/each.D6YF6ztN.js";import"../chunks/paths.BCdrAngW.js";function bt(r,n,v){const c=r.slice();return c[4]=n[v],c}function gt(r){let n,v=`<p>Furthermore, the robot’s environment is changing continuously either
             due to its own behaviour, that of the human or through some other
             external source. The robot should be able to adapt to this dynamic
             environment. Finally, especially to facilitate long-term

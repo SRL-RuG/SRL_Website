@@ -18,7 +18,6 @@ def main(session, details):
             {"time": 5200, "data": {"body.arms.right.upper.pitch": -2.5, "body.arms.right.lower.roll": 2, "body.arms.left.upper.pitch": -2.5, "body.arms.left.lower.roll": 2}},
             {"time": 6200, "data": {"body.arms.right.upper.pitch": -2.5, "body.arms.right.lower.roll": -1, "body.arms.left.upper.pitch": -2.5, "body.arms.left.lower.roll": -1}},
             {"time": 7200, "data": {"body.arms.right.upper.pitch": -2.5, "body.arms.right.lower.roll": 2, "body.arms.left.upper.pitch": -2.5, "body.arms.left.lower.roll": 2}},
-            
         ],
         force=True,
         sync=True
