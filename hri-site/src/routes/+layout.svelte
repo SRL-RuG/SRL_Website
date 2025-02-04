@@ -31,7 +31,7 @@
           <a href="{base}/">Home</a>
         </li>
         <li>
-          <a href="{base}/literature">Course Literature</a>
+          <a href="{base}/literature">HRI Course Literature</a>
         </li>
         <li>
           <a href="{base}/guides">Manuals</a>
@@ -49,7 +49,7 @@
         <a href="{base}/">Home</a>
       </li>
       <li>
-        <a href="{base}/literature">Course Literature</a>
+        <a href="{base}/literature">HRI Course Literature</a>
       </li>
       <li>
         <a href="{base}/guides">Manuals</a>

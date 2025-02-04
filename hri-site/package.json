@@ -3,9 +3,9 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "node pythonFiles.js && vite dev",
 		"build": "vite build && node pythonFiles.js",
-		"deploy": "gh-pages -d build -t true",
+		"deploy": " node pythonFiles.js && gh-pages -d build -t true",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
