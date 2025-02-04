@@ -11,53 +11,38 @@ import os
 from alpha_mini_rug.speech_to_text import SpeechToText
 
 
-audio_processor = SpeechToText()
-audio_processor.silance_time = 0.5
-audio_processor.silance_threshold = 1000
-audio_processor.silance_threshold2 = 100
-audio_processor.logging = True
+audio_processor = SpeechToText()  # create an instance of the class
+
+# changing these values might not be necessary
+audio_processor.silence_time = 0.5  # parameter set to indicate when to stop recording
+audio_processor.silence_threshold2 = 100  # any sound recorded bellow this value is considered silence
+
+audio_processor.logging = False  # set to true if you want to see all the output
 
 
 @inlineCallbacks
 def STT_continuous(session):
     info = yield session.call("rom.sensor.hearing.info")
     print(info)
-    sensitivity = yield session.call("rom.sensor.hearing.sensitivity")
-    print(sensitivity)
+
     yield session.call("rom.sensor.hearing.sensitivity", 1650)
-    sensitivity = yield session.call("rom.sensor.hearing.sensitivity")
-    print(sensitivity)
 
     yield session.call("rie.dialogue.config.language", lang="en")
     yield session.call("rie.dialogue.say", text="Say something")
+
     print("listening to audio")
     yield session.subscribe(audio_processor.listen_continues, "rom.sensor.hearing.stream")
     yield session.call("rom.sensor.hearing.stream")
 
-    print("here")
-
-    counter = 0
     while True:
-        if audio_processor.new_words == False:
-            yield sleep(0.2)
-            counter += 1
-            if counter % 100 == 0:
-                audio_processor.do_speach = False
-                yield session.call("rie.dialogue.say", text="Say something")
-                audio_processor.do_speach = True
-            try:
-                # print([word_array[0][-2:],word_array[1][-2:]])
-                print(word_array[-3:])
-            except:
-                pass
+        if not audio_processor.new_words:
+            yield sleep(0.5)  # VERY IMPORTANT, OTHERWISE THE CONNECTION TO THE SERVER MIGHT CRASH
+            print("waiting")
         else:
             word_array = audio_processor.give_me_words()
+            print("I'm processing the words")
+            print(word_array[-3:])  # print last 3 sentences
 
-            try:
-                # print([word_array[0][-2:],word_array[1][-2:]])
-                print(word_array[-3:])
-            except:
-                print(word_array)
         audio_processor.loop()
 
 
